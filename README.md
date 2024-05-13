@@ -3,7 +3,7 @@ BeatTime is a library that implements node based value animation for the BeatVal
 
 Just create a BeatValue object for every value you want to animate using nodes.
 
-```JS
+```JS Theme=Dark
         var beatvalue = new BeatValue('X', 0);
         beatvalue.addNode(3,10);
         beatvalue.addNode(6,0, BeatEasings.linear);
