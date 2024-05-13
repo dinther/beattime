@@ -1,0 +1,55 @@
+<html>
+<head>
+</head>
+<body>
+<style>
+#box {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: red;
+}
+
+body {
+	overflow: hidden;
+	font-family: monospace;
+}
+
+</style>
+
+<canvas id="myCanvas"></canvas>
+<script type="module">
+    import { BeatTime } from './beattime/beattime.js'
+    import { BeatEasings } from './beattime/beateasings.js'
+
+    var myCanvas = document.getElementById("myCanvas");
+    myCanvas.width = 1000;
+    myCanvas.height = 400;
+    var ctx = myCanvas.getContext("2d");
+
+    function drawLine(ctx, startX, startY, endX, endY, color){
+        ctx.save();
+        ctx.strokeStyle = color;
+        ctx.beginPath();
+        ctx.moveTo(startX,startY);
+        ctx.lineTo(endX,endY);
+        ctx.stroke();
+        ctx.restore();
+    }
+
+
+    var beattime = new BeatTime();
+    var beatvalue = beattime.addValue('x', 0, BeatEasings.easeOutBounce);
+    beatvalue.addNode(3,10);
+    beatvalue.addNode(6,0, BeatEasings.linear);
+    beatvalue.addNode(9,10,BeatEasings.easeInOutQuad);
+    var time = 0;
+    for(let i=1; i<1000; i++){
+        drawLine(ctx, i-1, 330 - beatvalue.getValueAtTime(time) * 20, i, 330 - beatvalue.getValueAtTime(time+0.01) * 20, '#F00');
+        time = time + 0.01;
+    }
+    console.log(beattime);
+
+</script>
+</body>
+</html>
