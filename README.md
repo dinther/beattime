@@ -1,5 +1,5 @@
 # beattime
-BeatTime is a library that implements node based value animation for the BeatValue class.
+BeatTime is a library that implements both logic and UI for node based value animation using the BeatValue class.
 
 Just create a BeatValue object for every value you want to animate using nodes.
 
@@ -33,7 +33,7 @@ easeInBack     easeOutBack     easeInOutBack
 easeInElastic  easeOutElastic  easeInOutElastic
 easeInBounce   easeOutBounce   easeInOutBounce
 ```
-This will be expanded later with a range of rythm specific easings.
+This will be expanded later with a range of music specific easings for hip-hop, circuit House and many others.
 
 
 
