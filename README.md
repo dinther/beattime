@@ -1,5 +1,6 @@
 # beattime
 BeatTime is a library that implements both logic and UI for node based value animation using the BeatValue class.
+Like with all my work, this library stands on it's own. No insane ten levels deep dependencies from weirdass libraries.
 
 Just create a BeatValue object for every value you want to animate using nodes.
 
